@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng Quay May Mắn - Professional</title>
+    <link rel="stylesheet" href="../static/luckywheel.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Panel trái: Danh sách thành viên -->
+        <div class="panel">
+            <h2>👥 Danh Sách Thành Viên</h2>
+            <div class="member-list" id="memberList"></div>
+            <div class="add-member">
+                <input type="text" id="newMemberInput" placeholder="Nhập tên thành viên mới..." onkeypress="handleEnterKey(event)">
+                <button class="add-btn" onclick="addMember()">Thêm</button>
+            </div>
+        </div>
+
+        <!-- Panel giữa: Vòng quay -->
+        <div class="panel main-panel">
+            <h1>🎯 Vòng Quay May Mắn</h1>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>Chế độ quay:</label>
+                    <select id="spinMode">
+                        <option value="keep">Giữ lại</option>
+                        <option value="remove">Loại bỏ</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Hiệu ứng:</label>
+                    <select id="celebrationMode">
+                        <option value="celebrate">Chúc mừng</option>
+                        <option value="no-celebrate">Không chúc mừng</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="wheel-container">
+                <div class="wheel-pointer"></div>
+                <canvas id="wheelChart" width="400" height="400"></canvas>
+            </div>
+
+            <div id="currentResult"></div>
+
+            <button class="spin-btn" id="spinBtn" onclick="spinWheel()">
+                🎲 QUAY NGAY!
+            </button>
+        </div>
+
+        <!-- Panel phải: Kết quả -->
+        <div class="panel">
+            <h2>🏆 Kết Quả Các Lần Quay</h2>
+            <div class="results-list" id="resultsList"></div>
+        </div>
+    </div>
+
+    <div id="celebration" class="celebration"></div>
+    <script src="../static/luckywheel.js"></script>
+</body>
+</html>
